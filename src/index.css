@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ink+Free:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Walter+Turncoat:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,0 +1,21 @@
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    /* Adjust the color as needed */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
