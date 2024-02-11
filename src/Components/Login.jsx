@@ -1,39 +1,70 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { ref, get, query, orderByChild, equalTo } from "firebase/database";
 
+import db from "../../firebase";
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const [formData, setFormData] = useState({
+    phone: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Implement your login logic here
-    console.log("Username:", username);
-    console.log("Password:", password);
-  };
 
+    const { email, password } = formData;
+
+    try {
+      const usersRef = ref(db, "userdetails");
+      const queryRef = query(usersRef, orderByChild("email"), equalTo(email));
+      // Fetch user data from Firebase Realtime Database
+      const snapshot = await get(queryRef);
+
+      const userData = snapshot.val();
+
+      if (userData) {
+        // User with the provided phone number exists
+        const user = Object.values(userData)[0];
+
+        // Check if the password matches
+        if (user.password === password) {
+          // Successfully logged in
+          console.log("Login successful");
+          navigate("/home/*");
+        } else {
+          // Incorrect password
+          console.log("Incorrect password");
+        }
+      } else {
+        // User with the provided phone number does not exist
+        console.log("User not found");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
   return (
-    <div className="flex justify-center w-screen h-screen mt-[120px]">
+    <div className="flex justify-center w-screen h-screen mt-[100px]">
       <div className="bg-white shadow-xl rounded-xl h-fit w-96 sh ">
         <div className="text-[40px] font-bold text-center my-[30px]">Login</div>
         <div className="justify-center w-full h-full ">
-          <form className="flex flex-col items-center justify-center p-4 gap-y-6" onSubmit={handleSubmit}>
+          <form
+            className="flex flex-col items-center justify-center p-4 gap-y-6"
+            onSubmit={handleLogin}
+          >
             <div className="flex items-center justify-center w-full">
               <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                value={username}
-                onChange={handleUsernameChange}
+                type="email"
+                name="email"
+                placeholder="Your E-mail"
                 className="w-4/5 p-3 text-3xl rounded-lg shadow-lg bg-zinc-100"
+                onChange={handleChange}
               />
             </div>
             <div className="flex items-center justify-center w-full">
@@ -41,8 +72,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
-                value={password}
-                onChange={handlePasswordChange}
+                onChange={handleChange}
                 className="w-4/5 p-3 text-3xl rounded-lg shadow-lg bg-zinc-100"
               />
             </div>

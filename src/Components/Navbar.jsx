@@ -20,9 +20,7 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Navbar */}
-        <div>
-          <Link to="/home">Homemain</Link>
-        </div>
+
         {/* Login sign up button */}
         <div className="w-[202px] h-[62px]">
           {pathname === "/" && (
