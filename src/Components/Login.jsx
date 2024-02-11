@@ -21,8 +21,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center w-screen h-screen mt-[120px]">
-      <div className="bg-white shadow-xl rounded-xl h-fit w-96 sh ">
+    <div className="flex justify-center w-screen h-screen mt-[10px]">
+      <div className="bg-white shadow-xl rounded-xl h-fit w-96 ">
         <div className="text-[40px] font-bold text-center my-[30px]">Login</div>
         <div className="justify-center w-full h-full ">
           <form className="flex flex-col items-center justify-center p-4 gap-y-6" onSubmit={handleSubmit}>

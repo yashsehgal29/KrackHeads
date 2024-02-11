@@ -22,9 +22,9 @@ const Signup = () => {
     };
 
     return (
-        <div className="flex justify-center w-screen h-screen mt-[150px]">
-            <div className="bg-white shadow-xl rounded-xl h-fit w-1/3 sh ">
-                <div className="text-[40px] font-bold text-center my-[30px]">Signup</div>
+        <div className="flex justify-center w-screen h-screen mt-[10px]">
+            <div className="bg-white shadow-xl rounded-xl h-fit w-1/3 ">
+                <div className="text-[40px] font-bold text-center my-[20px]">Signup</div>
                 <div className="justify-center w-full h-full ">
                     <form className="flex flex-col items-center justify-center p-4 gap-y-6" onSubmit={handleSubmit}>
                         <div className="flex items-center justify-center w-full">
