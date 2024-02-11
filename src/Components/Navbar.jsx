@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Login sign up button */}
         <div className="w-[202px] h-[62px]">
           {pathname === "/" && (
-            <NavLink to="/logsign" className="your-class-name">
+            <NavLink to="/login" className="your-class-name">
               Login
             </NavLink>
           )}

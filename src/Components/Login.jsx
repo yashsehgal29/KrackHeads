@@ -1,18 +1,38 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Implement your login logic here
+    console.log("Username:", username);
+    console.log("Password:", password);
+  };
+
   return (
     <div className="flex justify-center w-screen h-screen mt-[120px]">
       <div className="bg-white shadow-xl rounded-xl h-fit w-96 sh ">
         <div className="text-[40px] font-bold text-center my-[30px]">Login</div>
         <div className="justify-center w-full h-full ">
-          <form className="flex flex-col items-center justify-center p-4 gap-y-6">
+          <form className="flex flex-col items-center justify-center p-4 gap-y-6" onSubmit={handleSubmit}>
             <div className="flex items-center justify-center w-full">
               <input
                 type="text"
                 name="username"
-                placeholder="UserName"
+                placeholder="Username"
+                value={username}
+                onChange={handleUsernameChange}
                 className="w-4/5 p-3 text-3xl rounded-lg shadow-lg bg-zinc-100"
               />
             </div>
@@ -21,6 +41,8 @@ const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                value={password}
+                onChange={handlePasswordChange}
                 className="w-4/5 p-3 text-3xl rounded-lg shadow-lg bg-zinc-100"
               />
             </div>
