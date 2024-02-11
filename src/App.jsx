@@ -6,6 +6,7 @@ import About from "./Components/About";
 import Services from "./Components/Services";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+import Homemain from "./Components/Homemain";
 
 // bg-gradient-to-b from-[#FFEADD] via-[rgb(130,184,237)] to-[#FF8989]
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/services" element={<Services />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/home" element={<Homemain />}></Route>
       </Routes>
     </div>
   );
