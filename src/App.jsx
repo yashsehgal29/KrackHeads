@@ -11,7 +11,7 @@ import Login from './Components/Login';
 function App() {
   
   return (
-    <div className='z-0 w-screen bg-no-repeat bg-cover' style={{ backgroundImage: `url(${"/src/assets/BG.svg"})` }}>
+    <div className='z-0 bg-no-repeat bg-cover' style={{ backgroundImage: `url(${"/src/assets/BG.svg"})` }}>
     <Navbar/>
     <Routes >
       <Route path='/' element={<Home/>}></Route>

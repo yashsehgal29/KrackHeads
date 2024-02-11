@@ -16,6 +16,41 @@
     transition: width 0.3s ease-in-out;
 }
 
+
 .nav-link:hover::before {
     width: 100%;
 }
+.nav-link.active::before {
+    width: 100%;
+}
+
+.your-class-name {
+    width: 202px;
+    height: 62px;
+    border-radius: 2xl;
+
+    font-size:25px;
+    font-weight: bold;
+    color:#f43f5e;
+    border: 2px solid #f43f5e;
+    text-align: center;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+.your-class-name:active,
+.your-class-name:focus {
+    color: #fff;
+    background-color: #f43f5e;
+
+
+}
+.your-class-name:hover {
+    color: #fff;
+    background-color: #f43f5e;
+    border-color: #f43f5e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+

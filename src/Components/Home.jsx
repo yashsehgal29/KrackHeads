@@ -25,8 +25,8 @@ const Home = () => {
           <span className="text-black text-[25px] font-normal font-['Kumbh Sans'] font-bold">Let's put your well-being first, together.<br/></span>
          
         </div>
-         <div className="  bg-rose-400 rounded-[23px] w-1/2 border border-white h-[60px] flex items-center justify-center mt-20" >
-            <div className=" text-white text-3xl font-bold font-['Kumbh Sans'] ">Get an account</div>
+         <div className="  bg-rose-400 rounded-[23px] w-1/2 border border-white h-[60px] flex items-center justify-center mt-20 hover:bg-rose-600" >
+            <div className=" text-white text-3xl font-bold font-['Kumbh Sans']">Get an account</div>
           </div>
       </div>
       
