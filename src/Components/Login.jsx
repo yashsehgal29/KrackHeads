@@ -36,7 +36,7 @@ const Login = () => {
         if (user.password === password) {
           // Successfully logged in
           console.log("Login successful");
-          navigate("/home/*");
+          navigate("/home/");
         } else {
           // Incorrect password
           console.log("Incorrect password");
